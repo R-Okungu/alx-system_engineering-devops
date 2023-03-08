@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -a1 | awk 'BEGIN {ORS=","} {if ($1 ~ /^[A-Za-z0-9]/) {if ($1 ~ /^[0-9]/) {a[++x]=$1} else {b[++y]=$1}}} END {for (i in a) {printf "%s,", a[i]}; for (i in b) {printf "%s%s", b[i], (i==y)?"\n":","}}'
